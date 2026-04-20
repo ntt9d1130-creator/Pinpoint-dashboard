@@ -367,8 +367,8 @@
         <div class="kpi-row">
             <div class="kpi-card">
                 <div class="kpi-label">GP2 Actual H1</div>
-                <div class="kpi-value" style="color:var(--accent-yellow)">3,625M</div>
-                <div class="kpi-sub warning">53.1% vs Forecast</div>
+                <div class="kpi-value" style="color:var(--accent-yellow)">3,854M</div>
+                <div class="kpi-sub warning">56.5% vs Forecast</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">GP2 Forecast H1</div>
@@ -378,7 +378,7 @@
             <div class="kpi-card">
                 <div class="kpi-label">GP2 Budget H1</div>
                 <div class="kpi-value">12,001M</div>
-                <div class="kpi-sub neutral">Achievement: 30.2%</div>
+                <div class="kpi-sub neutral">Achievement: 32.1%</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">DPPC H1</div>
@@ -396,8 +396,8 @@
         <div class="kpi-row" style="margin-top:8px;">
             <div class="kpi-card">
                 <div class="kpi-label">GP2 Actual Q2</div>
-                <div class="kpi-value" style="color:var(--accent-yellow)">403M</div>
-                <div class="kpi-sub warning">11.2% vs Forecast</div>
+                <div class="kpi-value" style="color:var(--accent-yellow)">632M</div>
+                <div class="kpi-sub warning">17.6% vs Forecast</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">GP2 Forecast Q2</div>
@@ -407,7 +407,7 @@
             <div class="kpi-card">
                 <div class="kpi-label">GP2 Budget Q2</div>
                 <div class="kpi-value">6,885M</div>
-                <div class="kpi-sub neutral">Achievement: 5.9%</div>
+                <div class="kpi-sub neutral">Achievement: 9.2%</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">DPPC Q2</div>
@@ -470,10 +470,10 @@
                         <td><span class="badge badge-green">100.0%</span></td><td><span class="badge badge-green">100.0%</span></td>
                         <td>373</td><td>30.6%</td>
                     </tr>
-                    <tr>
-                        <td><strong>T4/2026</strong></td><td>2,295</td><td>1,073</td><td>403</td>
+                                        <tr>
+                        <td><strong>T4/2026</strong></td><td>2,295</td><td>1,073</td><td>632</td>
                         <td>66%</td><td>46.8%</td>
-                        <td><span class="badge badge-red">37.6%</span></td><td><span class="badge badge-red">57.3%</span></td>
+                        <td><span class="badge badge-red">58.9%</span></td><td><span class="badge badge-yellow">89.9%</span></td>
                         <td>284</td><td>26.5%</td>
                     </tr>
                     <tr style="opacity:0.5">
@@ -485,9 +485,9 @@
                         <td>0%</td><td>47.9%</td><td>—</td><td>—</td><td>284</td><td>25.8%</td>
                     </tr>
                     <tr style="font-weight:700; border-top: 2px solid var(--border);">
-                        <td>H1 2026</td><td>12,001</td><td>6,822</td><td>3,625</td>
+                        <td>H1 2026</td><td>12,001</td><td>6,822</td><td>3,854</td>
                         <td></td><td>56.8%</td>
-                        <td><span class="badge badge-red">53.1%</span></td><td><span class="badge badge-red">56.2%</span></td>
+                        <td><span class="badge badge-red">56.5%</span></td><td><span class="badge badge-red">61.4%</span></td>
                         <td>1,919</td><td>28.1%</td>
                     </tr>
                 </tbody>
@@ -1236,7 +1236,7 @@ new Chart(document.getElementById('chartGP2Monthly'), {
         datasets: [
             { label: 'Budget', data: [1988, 1097, 2031, 2295, 2295, 2295], backgroundColor: 'rgba(59,130,246,0.2)', borderColor: '#3b82f6', borderWidth: 1, borderRadius: 4 },
             { label: 'Forecast', data: [1122.0, 880.0, 1220.0, 1073.0, 1428.0, 1099.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
-            { label: 'Actual', data: [1122.0, 880.0, 1220.0, 403.0, 0.0, 0.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
+            { label: 'Actual', data: [1122.0, 880.0, 1220.0, 632.0, 0.0, 0.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
         ]
     },
     options: {
@@ -1252,8 +1252,8 @@ new Chart(document.getElementById('chartEfficiency'), {
     data: {
         labels: ['T1','T2','T3','T4'],
         datasets: [
-            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 37.6], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 57.3], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 58.9], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 89.9], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
             { label: 'Target 100%', data: [100,100,100,100], borderColor: '#ef4444', borderDash: [5,5], fill: false, tension: 0, pointRadius: 0 }
         ]
     },
@@ -1290,7 +1290,7 @@ new Chart(document.getElementById('chartFuncPerf'), {
         labels: ['MEDIA','CREATIVE','LIVESTREAM','INFLUENCER','TECH_DATA'],
         datasets: [
             { label: 'Forecast', data: [1376.3, 131.1, 130.0, 45.0, 4.5], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
-            { label: 'Actual', data: [498.9, 58.0, 74.7, 0, 0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
+            { label: 'Actual', data: [1122.0, 880.0, 1220.0, 632.0, 0.0, 0.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
         ]
     },
     options: {
