@@ -1332,10 +1332,10 @@ weeklyData.forEach(d => {
 });
 
 // ============ SALES PIC CHARTS ============
-const salesPICs = ['Nguyệt','Quân','Tài Hoa','Mai Thư','Trang','Thục Nghi','P.Đông','Đại Dương','Tố Hân'];
-const salesMeetAch = [84.6, 58.3, 28.0, 98.0, 91.8, 0, 37.7, 96.2, 32.0];
-const salesBriefAch = [75.0, 46.2, 61.5, 188.5, 115.4, 61.5, 46.2, 56.3, 15.4];
-const salesContractAch = [36.4, 25.0, 0, 18.2, 60.0, 0, 66.7, 72.7, 0];
+const salesPICs = ['Nguyệt','Tài Hoa','Mai Thư','Trang','Đại Dương'];
+const salesMeetAch = [75.0, 69.2, 108.3, 75.0, 75.0];
+const salesBriefAch = [66.7, 16.7, 141.7, 58.3, 50.0];
+const salesContractAch = [0, 0, 200.0, 0, 0];
 
 new Chart(document.getElementById('chartSalesPIC'), {
     type: 'bar',
@@ -1355,7 +1355,7 @@ new Chart(document.getElementById('chartSalesPIC'), {
 });
 
 const bdMetrics = ['Activities','Q.Activities','Meeting','Brief','Contract'];
-const bdAch = [43.5, 59.9, 67.4, 79.8, 29.1];
+const bdAch = [49.0, 74.5, 81.1, 68.8, 53.3];
 const bdColors = bdAch.map(v => v >= 75 ? 'rgba(34,197,94,0.7)' : v >= 50 ? 'rgba(234,179,8,0.7)' : 'rgba(239,68,68,0.7)');
 new Chart(document.getElementById('chartSalesMetrics'), {
     type: 'bar',
