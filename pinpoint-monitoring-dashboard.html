@@ -1301,6 +1301,7 @@ const weeklyData = [
     { w: '4/1', lead: 22, ql: 12, brief: 10, qb: 9, qs: 5, vc: 2, contract: 3 },
     { w: '4/6', lead: 30, ql: 12, brief: 8, qb: 6, qs: 8, vc: 2, contract: 0 },
     { w: '4/13', lead: 53, ql: 29, brief: 16, qb: 12, qs: 9, vc: 0, contract: 3 },
+    { w: '4/20', lead: 18, ql: 8, brief: 10, qb: 9, qs: 6, vc: 5, contract: 2 },
 ];
 
 new Chart(document.getElementById('chartWeekly'), {
@@ -1530,19 +1531,19 @@ if (ganttLabel) ganttLabel.innerHTML = '📍 Hôm nay: <strong>' + todayStr + '<
 
 // ============ VERTICAL DATA ============
 const verticalData = [
-    { v: 'Auto', lead: 2, ql: 1, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 1, exec: 0 },
-    { v: 'Beauty', lead: 9, ql: 7, brief: 5, qb: 4, qs: 2, vc: 1, nvc: 0, contract: 1, exec: 1 },
-    { v: 'Digital Product', lead: 3, ql: 1, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Education', lead: 9, ql: 7, brief: 6, qb: 5, qs: 2, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { v: 'FMCG', lead: 11, ql: 6, brief: 3, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Fashion', lead: 12, ql: 6, brief: 4, qb: 3, qs: 2, vc: 1, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Finance', lead: 4, ql: 3, brief: 3, qb: 2, qs: 3, vc: 0, nvc: 0, contract: 1, exec: 0 },
-    { v: 'Health Care', lead: 3, ql: 2, brief: 2, qb: 2, qs: 2, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Home & Electronics', lead: 15, ql: 3, brief: 1, qb: 1, qs: 2, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Others', lead: 28, ql: 12, brief: 5, qb: 5, qs: 7, vc: 1, nvc: 1, contract: 0, exec: 0 },
+    { v: 'Auto', lead: 4, ql: 3, brief: 3, qb: 3, qs: 1, vc: 0, nvc: 0, contract: 1, exec: 0 },
+    { v: 'Beauty', lead: 12, ql: 7, brief: 5, qb: 4, qs: 2, vc: 2, nvc: 0, contract: 1, exec: 1 },
+    { v: 'Digital Product', lead: 6, ql: 1, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { v: 'Education', lead: 9, ql: 7, brief: 6, qb: 6, qs: 3, vc: 1, nvc: 0, contract: 1, exec: 0 },
+    { v: 'FMCG', lead: 14, ql: 6, brief: 3, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { v: 'Fashion', lead: 15, ql: 7, brief: 6, qb: 3, qs: 3, vc: 1, nvc: 0, contract: 1, exec: 0 },
+    { v: 'Finance', lead: 4, ql: 3, brief: 3, qb: 3, qs: 3, vc: 0, nvc: 0, contract: 1, exec: 0 },
+    { v: 'Health Care', lead: 4, ql: 3, brief: 3, qb: 3, qs: 2, vc: 2, nvc: 0, contract: 0, exec: 0 },
+    { v: 'Home & Electronics', lead: 19, ql: 4, brief: 2, qb: 1, qs: 2, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { v: 'Others', lead: 35, ql: 17, brief: 10, qb: 9, qs: 9, vc: 2, nvc: 1, contract: 1, exec: 0 },
     { v: 'Real estate', lead: 4, ql: 1, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 1, exec: 0 },
     { v: 'Retail', lead: 0, ql: 0, brief: 1, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Travel', lead: 4, ql: 3, brief: 3, qb: 3, qs: 2, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { v: 'Travel', lead: 5, ql: 3, brief: 3, qb: 3, qs: 2, vc: 1, nvc: 0, contract: 0, exec: 0 },
 ];
 
 // Populate vertical table
@@ -1607,26 +1608,25 @@ new Chart(document.getElementById('chartVerticalCR'), {
 
 // ============ SOURCE DATA ============
 const sourceData = [
-    { s: 'Marketing_Event_Guest speak', lead: 37, ql: 12, brief: 4, qb: 2, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Research_Social', lead: 22, ql: 10, brief: 5, qb: 4, qs: 4, vc: 0, nvc: 0, contract: 1, exec: 1 },
-    { s: 'Scrapping_Relationship_Direct', lead: 15, ql: 15, brief: 14, qb: 14, qs: 12, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { s: 'Marketing_Event_Hosted event', lead: 9, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Research_Google', lead: 6, ql: 1, brief: 0, qb: 0, qs: 1, vc: 1, nvc: 0, contract: 2, exec: 0 },
-    { s: 'Direct_Hotline_Social inbox', lead: 5, ql: 5, brief: 4, qb: 2, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Event_Joined event', lead: 4, ql: 3, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Live chat', lead: 3, ql: 2, brief: 2, qb: 2, qs: 1, vc: 1, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Phone', lead: 2, ql: 2, brief: 2, qb: 1, qs: 3, vc: 1, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Marketing_Event_Hosted event', lead: 32, ql: 7, brief: 2, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Scrapping_Research_Social', lead: 24, ql: 11, brief: 6, qb: 5, qs: 4, vc: 0, nvc: 1, contract: 1, exec: 0 },
+    { s: 'Marketing_Event_Guest speak', lead: 23, ql: 7, brief: 3, qb: 3, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Scrapping_Relationship_Direct', lead: 16, ql: 15, brief: 15, qb: 14, qs: 12, vc: 5, nvc: 0, contract: 1, exec: 0 },
+    { s: 'Scrapping_Research_Google', lead: 9, ql: 0, brief: 0, qb: 0, qs: 1, vc: 1, nvc: 0, contract: 3, exec: 0 },
+    { s: 'Direct_Hotline_Social inbox', lead: 5, ql: 5, brief: 4, qb: 2, qs: 2, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Direct_Hotline_Phone', lead: 4, ql: 4, brief: 4, qb: 2, qs: 3, vc: 1, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Direct_Hotline_Live chat', lead: 4, ql: 3, brief: 3, qb: 3, qs: 1, vc: 1, nvc: 0, contract: 1, exec: 0 },
+    { s: 'Scrapping_Event_Joined event', lead: 4, ql: 3, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Scrapping_Contact list_Non-Paid', lead: 2, ql: 2, brief: 2, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Marketing_Ad_Facebook', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Direct_Hotline_Email', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Direct_Website_Main contact form', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
     { s: 'Scrapping_Contact list_Paid', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Scrapping_Relationship_Referral', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Referral_Partner_Non-Strategic', lead: 1, ql: 1, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Referral_Partner_Strategic', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 1, nvc: 0, contract: 0, exec: 0 },
     { s: 'Referral_PMAX_Passive_MKTLead', lead: 0, ql: 1, brief: 1, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
     { s: 'Referral_PMAX_Referral', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 1, exec: 0 },
-];
-
-// Source grouped
-const sourceGrouped = [
-    { g: 'Scrapping', lead: 48, ql: 30, brief: 21, contract: 4, color: '#3b82f6' },
-    { g: 'Marketing', lead: 46, ql: 12, brief: 4, contract: 0, color: '#eab308' },
-    { g: 'Direct', lead: 10, ql: 9, brief: 8, contract: 0, color: '#22c55e' },
-    { g: 'Referral', lead: 0, ql: 1, brief: 1, contract: 1, color: '#a855f7' },
 ];
 
 // Populate source table
@@ -1648,6 +1648,13 @@ sBody.innerHTML += `<tr style="font-weight:700;border-top:2px solid var(--border
     <td>TOTAL</td><td>${sTL}</td><td>${sTQL}</td><td>${sTB}</td><td>${sTQB}</td><td>${sTQS}</td><td>${sTVC}</td><td>${sTNVC}</td><td>${sTC}</td><td>${sTE}</td>
     <td>${(sTQL/sTL*100).toFixed(1)}%</td><td><span class="badge badge-yellow">${(sTC/sTL*100).toFixed(1)}%</span></td>
 </tr>`;
+
+const sourceGrouped = [
+    { g: 'Scrapping', lead: 57, ql: 32, brief: 25, contract: 5, color: '#3b82f6' },
+    { g: 'Marketing', lead: 56, ql: 14, brief: 5, contract: 0, color: '#eab308' },
+    { g: 'Direct', lead: 15, ql: 13, brief: 12, contract: 1, color: '#22c55e' },
+    { g: 'Referral', lead: 2, ql: 3, brief: 3, contract: 1, color: '#a855f7' },
+];
 
 // Source Lead chart (grouped)
 new Chart(document.getElementById('chartSourceLead'), {
