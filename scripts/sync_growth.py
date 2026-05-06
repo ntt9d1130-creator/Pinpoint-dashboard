@@ -22,6 +22,26 @@ TAB = "4. Summary Sales Performance"
 GWS = "/usr/local/bin/gws"
 REPO = Path(__file__).resolve().parent.parent
 INDEX = REPO / "index.html"
+DATA_JS = REPO / "data" / "data.js"
+
+
+def read_data_js():
+    """Read and parse data/data.js → dict."""
+    if not DATA_JS.exists():
+        return {}
+    text = DATA_JS.read_text(encoding="utf-8").strip()
+    # Format: window.DASHBOARD_DATA = {...};
+    m = re.match(r"^window\.DASHBOARD_DATA\s*=\s*(\{[\s\S]*\});?\s*$", text)
+    if not m:
+        return {}
+    return json.loads(m.group(1))
+
+
+def write_data_js(data):
+    """Write dict to data/data.js."""
+    DATA_JS.parent.mkdir(parents=True, exist_ok=True)
+    text = "window.DASHBOARD_DATA = " + json.dumps(data, ensure_ascii=False) + ";"
+    DATA_JS.write_text(text, encoding="utf-8")
 
 # Stage order matches sheet column order (col C..J for Source/Vertical, col C..I for Quarter)
 STAGES = ["lead", "ql", "brief", "qb", "qs", "vc", "nvc", "contract"]
@@ -146,40 +166,39 @@ def js_format_num(v):
     return str(v)
 
 
-def render_weekly_array(weeks):
-    """Generate JS for `const weeklyData = [...]`. Drop weeks with all zeros (no actual yet)."""
-    rendered = []
+def build_weekly_array(weeks):
+    """List of dicts. Drop weeks with all zeros (no actual yet)."""
+    out = []
     for w in weeks:
         if all(w.get(s, 0) == 0 for s in ["lead", "ql", "brief", "qb", "qs", "vc", "contract"]):
             continue
-        rendered.append(
-            f"    {{ w: '{w['w']}', lead: {w['lead']}, ql: {w['ql']}, brief: {w['brief']}, "
-            f"qb: {w['qb']}, qs: {w['qs']}, vc: {w['vc']}, contract: {w['contract']} }},"
-        )
-    return "const weeklyData = [\n" + "\n".join(rendered) + "\n];"
+        out.append({
+            "w": w["w"], "lead": w["lead"], "ql": w["ql"], "brief": w["brief"],
+            "qb": w["qb"], "qs": w["qs"], "vc": w["vc"], "contract": w["contract"],
+        })
+    return out
 
 
-def render_vertical_array(verticals):
-    rendered = []
-    for v in sorted(verticals, key=lambda x: x["name"]):
-        rendered.append(
-            f"    {{ v: '{v['name']}', lead: {v['lead']}, ql: {v['ql']}, brief: {v['brief']}, "
-            f"qb: {v['qb']}, qs: {v['qs']}, vc: {v['vc']}, nvc: {v['nvc']}, "
-            f"contract: {v['contract']}, exec: 0 }},"
-        )
-    return "const verticalData = [\n" + "\n".join(rendered) + "\n];"
+def build_vertical_array(verticals):
+    return [
+        {
+            "v": v["name"], "lead": v["lead"], "ql": v["ql"], "brief": v["brief"],
+            "qb": v["qb"], "qs": v["qs"], "vc": v["vc"], "nvc": v["nvc"],
+            "contract": v["contract"], "exec": 0,
+        }
+        for v in sorted(verticals, key=lambda x: x["name"])
+    ]
 
 
-def render_source_array(sources):
-    # Sort by lead desc — matches existing pattern
-    rendered = []
-    for s in sorted(sources, key=lambda x: -x["lead"]):
-        rendered.append(
-            f"    {{ s: '{s['name']}', lead: {s['lead']}, ql: {s['ql']}, brief: {s['brief']}, "
-            f"qb: {s['qb']}, qs: {s['qs']}, vc: {s['vc']}, nvc: {s['nvc']}, "
-            f"contract: {s['contract']}, exec: 0 }},"
-        )
-    return "const sourceData = [\n" + "\n".join(rendered) + "\n];"
+def build_source_array(sources):
+    return [
+        {
+            "s": s["name"], "lead": s["lead"], "ql": s["ql"], "brief": s["brief"],
+            "qb": s["qb"], "qs": s["qs"], "vc": s["vc"], "nvc": s["nvc"],
+            "contract": s["contract"], "exec": 0,
+        }
+        for s in sorted(sources, key=lambda x: -x["lead"])
+    ]
 
 
 def compute_grouped(sources):
@@ -195,23 +214,11 @@ def compute_grouped(sources):
         if prefix in groups:
             for stage in ("lead", "ql", "brief", "contract"):
                 groups[prefix][stage] += s.get(stage, 0)
-    rendered = []
-    for name, vals in groups.items():
-        rendered.append(
-            f"    {{ g: '{name}', lead: {vals['lead']}, ql: {vals['ql']}, "
-            f"brief: {vals['brief']}, contract: {vals['contract']}, color: '{vals['color']}' }},"
-        )
-    return "const sourceGrouped = [\n" + "\n".join(rendered) + "\n];"
-
-
-def replace_array(html, var_name, new_block):
-    """Replace `const <var_name> = [ ... ];` block."""
-    pattern = re.compile(
-        rf"const {var_name} = \[[\s\S]*?\];", re.MULTILINE
-    )
-    if not pattern.search(html):
-        raise RuntimeError(f"Pattern not found: const {var_name}")
-    return pattern.sub(new_block, html, count=1)
+    return [
+        {"g": name, "lead": vals["lead"], "ql": vals["ql"],
+         "brief": vals["brief"], "contract": vals["contract"], "color": vals["color"]}
+        for name, vals in groups.items()
+    ]
 
 
 def replace_funnel(html, q):
@@ -378,36 +385,47 @@ def main():
     print(f"  Sources: {len(sources)}")
     print(f"  Verticals: {len(verticals)}")
 
-    # Render new arrays
-    new_weekly = render_weekly_array(weekly)
-    new_vertical = render_vertical_array(verticals)
-    new_source = render_source_array(sources)
+    # Build new arrays as dicts
+    new_weekly = build_weekly_array(weekly)
+    new_vertical = build_vertical_array(verticals)
+    new_source = build_source_array(sources)
     new_grouped = compute_grouped(sources)
 
-    # Read & patch index.html
+    # Read existing data.js, update arrays
+    data = read_data_js()
+    data["weeklyData"] = new_weekly
+    data["verticalData"] = new_vertical
+    data["sourceData"] = new_source
+    data["sourceGrouped"] = new_grouped
+
+    # Patch HTML for funnel + KPI cards (still HTML, not JSON)
     html = INDEX.read_text(encoding="utf-8")
-    original = html
-    html = replace_array(html, "weeklyData", new_weekly)
-    html = replace_array(html, "verticalData", new_vertical)
-    html = replace_array(html, "sourceData", new_source)
-    html = replace_array(html, "sourceGrouped", new_grouped)
+    original_html = html
     html = replace_funnel(html, quarter)
     html = replace_kpi_growth(html, quarter)
 
-    if html == original:
+    html_changed = html != original_html
+    data_changed = data != read_data_js()
+
+    if not html_changed and not data_changed:
         print("\nKhông có thay đổi.")
         return
 
     if apply:
-        INDEX.write_text(html, encoding="utf-8")
-        print(f"\n✅ Đã update {INDEX}")
+        if html_changed:
+            INDEX.write_text(html, encoding="utf-8")
+            print(f"  ✅ Updated {INDEX.name}")
+        if data_changed:
+            write_data_js(data)
+            print(f"  ✅ Updated {DATA_JS.relative_to(REPO)}")
     else:
-        # Dry-run: print summary of changes
-        print("\n--- Preview new arrays ---")
-        print(new_weekly)
-        print()
-        print(new_grouped)
-        print("\n(Chạy lại với --apply để ghi vào index.html)")
+        print("\n--- Preview ---")
+        print(f"  weekly: {len(new_weekly)} rows")
+        print(f"  vertical: {len(new_vertical)} rows")
+        print(f"  source: {len(new_source)} rows")
+        print(f"  sourceGrouped: {len(new_grouped)} rows")
+        print(f"  HTML changed: {html_changed}, data.js changed: {data_changed}")
+        print("\n(Chạy lại với --apply)")
 
 
 if __name__ == "__main__":

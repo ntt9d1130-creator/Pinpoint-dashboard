@@ -33,6 +33,23 @@ TAB_ACTUAL = "2. Project Actual Performance"
 GWS = "/usr/local/bin/gws"
 REPO = Path(__file__).resolve().parent.parent
 INDEX = REPO / "index.html"
+DATA_JS = REPO / "data" / "data.js"
+
+
+def read_data_js():
+    if not DATA_JS.exists():
+        return {}
+    text = DATA_JS.read_text(encoding="utf-8").strip()
+    m = re.match(r"^window\.DASHBOARD_DATA\s*=\s*(\{[\s\S]*\});?\s*$", text)
+    if not m:
+        return {}
+    return json.loads(m.group(1))
+
+
+def write_data_js(data):
+    DATA_JS.parent.mkdir(parents=True, exist_ok=True)
+    text = "window.DASHBOARD_DATA = " + json.dumps(data, ensure_ascii=False) + ";"
+    DATA_JS.write_text(text, encoding="utf-8")
 
 # Tab 1 columns (1-indexed → 0-indexed)
 COL_PLAN_MONTH = 3       # D = Month (date)
@@ -251,28 +268,19 @@ def fmt_pct(numerator, denominator):
     return f"{(numerator / denominator * 100):.1f}%"
 
 
-def render_project(month, code, name, func, forecast, actual, timegone, matching):
-    """Render one projectData row as JS object literal."""
+def build_project(month, code, name, func, forecast, actual, timegone, matching):
+    """Build one projectData row as dict."""
     runrate = forecast * timegone
     pct_forecast = fmt_pct(actual, forecast)
     pct_runrate = fmt_pct(actual, runrate) if matching == "MATCHED" else ""
-    timegone_str = f"{timegone * 100:.1f}%"
-    # Round numbers to 1 decimal, drop trailing 0 if int
-    def num(v):
-        if v == 0:
-            return "0"
-        if abs(v - round(v)) < 0.05:
-            return f"{v:.1f}"
-        return f"{v:.1f}"
-    # Escape single quotes in strings
-    def esc(s):
-        return str(s).replace("\\", "\\\\").replace("'", "\\'")
-    return (
-        f"{{month:'{esc(month)}',code:'{esc(code)}',name:'{esc(name)}',func:'{esc(func)}',"
-        f"forecast:{num(forecast)},actual:{num(actual)},pctForecast:'{pct_forecast}',"
-        f"timegone:'{timegone_str}',runrate:{num(runrate)},pctRunrate:'{pct_runrate}',"
-        f"matching:'{matching}'}}"
-    )
+    return {
+        "month": month, "code": code, "name": name, "func": func,
+        "forecast": round(forecast, 1), "actual": round(actual, 1),
+        "pctForecast": pct_forecast,
+        "timegone": f"{timegone * 100:.1f}%",
+        "runrate": round(runrate, 1), "pctRunrate": pct_runrate,
+        "matching": matching,
+    }
 
 
 def month_sort_key(month_str):
@@ -349,39 +357,26 @@ def main():
 
     print(f"  Total project rows: {len(rows)}")
 
-    # Render JS
-    js_lines = ["const projectData = ["]
-    for r in rows:
-        js_lines.append(render_project(*r) + ",")
-    js_lines.append("];")
-    new_block = "\n".join(js_lines)
+    # Build dict list
+    project_data = [build_project(*r) for r in rows]
 
-    # Replace in index.html
-    html = INDEX.read_text(encoding="utf-8")
-    pattern = re.compile(r"const projectData = \[[\s\S]*?\n\];", re.MULTILINE)
-    if not pattern.search(html):
-        print("ERROR: const projectData block not found in index.html")
-        sys.exit(1)
-    new_html = pattern.sub(new_block, html, count=1)
-
-    if new_html == html:
+    # Update data.js
+    data = read_data_js()
+    if data.get("projectData") == project_data:
         print("\nKhông có thay đổi.")
         return
 
     if apply:
-        INDEX.write_text(new_html, encoding="utf-8")
-        print(f"\n✅ Đã update {INDEX}")
-        # Quick stats
-        old_lines = html.count("\n")
-        new_lines = new_html.count("\n")
-        print(f"  Lines: {old_lines} → {new_lines}")
+        data["projectData"] = project_data
+        write_data_js(data)
+        print(f"\n✅ Đã update {DATA_JS.relative_to(REPO)}")
+        print(f"  projectData: {len(project_data)} rows")
     else:
-        # Print sample of new rows
-        print("\n--- Sample 10 rows ---")
-        for line in js_lines[1:11]:
-            print(line)
-        print(f"...({len(rows) - 10} more rows)")
-        print("\n(Chạy lại với --apply để ghi vào index.html)")
+        print("\n--- Sample 5 rows ---")
+        for r in project_data[:5]:
+            print(f"  {r}")
+        print(f"...({len(project_data) - 5} more)")
+        print("\n(Chạy lại với --apply)")
 
 
 if __name__ == "__main__":
