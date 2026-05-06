@@ -46,7 +46,8 @@ COL_PLAN_GP2 = 50    # AY (NOT AX which has #REF! formula)
 
 # Tab 2 columns
 COL_ACT_FUNC = 1
-COL_ACT_GP2 = 5      # raw VND
+COL_ACT_GP2 = 9      # col J = GP2.5 (raw VND) — dashboard hiển thị "THỰC TẾ GP2.5"
+                     # NOTE: col F = GP2 có thể âm do điều chỉnh, GP2.5 = số kết quả cuối cùng
 COL_ACT_MONTH = 11
 
 # Latest month with actual data (T4 currently for chartFunctionT3 / chartFuncPerf)

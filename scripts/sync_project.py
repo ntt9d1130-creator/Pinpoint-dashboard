@@ -44,7 +44,7 @@ COL_PLAN_GP2 = 50        # AY = numeric Adjust GP2 (col AX has header "Adjust GP
 # Tab 2 columns
 COL_ACT_NAME = 0         # A = Project code and name
 COL_ACT_FUNC = 1         # B = function
-COL_ACT_GP2 = 5          # F = GP2 (raw VND)
+COL_ACT_GP2 = 9          # J = GP2.5 (raw VND, NOT col F=GP2 vì có thể âm do adjustment)
 COL_ACT_MONTH = 11       # L = Month (date)
 
 
