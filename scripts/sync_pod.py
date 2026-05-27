@@ -38,6 +38,23 @@ TAB_ACTUAL = "2. Project Actual Performance"
 GWS = "/usr/local/bin/gws"
 REPO = Path(__file__).resolve().parent.parent
 INDEX = REPO / "index.html"
+DATA_JS = REPO / "data" / "data.js"
+
+
+def read_data_js():
+    if not DATA_JS.exists():
+        return {}
+    text = DATA_JS.read_text(encoding="utf-8").strip()
+    m = re.match(r"^window\.DASHBOARD_DATA\s*=\s*(\{[\s\S]*\});?\s*$", text)
+    return json.loads(m.group(1)) if m else {}
+
+
+def write_data_js(data):
+    DATA_JS.parent.mkdir(parents=True, exist_ok=True)
+    DATA_JS.write_text(
+        "window.DASHBOARD_DATA = " + json.dumps(data, ensure_ascii=False) + ";",
+        encoding="utf-8",
+    )
 
 # Tab 1 columns
 COL_PLAN_MONTH = 3
@@ -660,9 +677,23 @@ def main():
         html, count=1
     )
 
+    # Build monthlyPOD for project-section summary (dynamic by month/quarter)
+    monthly_pod = [{
+        "label": m["label"], "monthNum": m["month_num"],
+        "target": round(m["gp2_target"], 1),
+        "forecast": round(m["gp2_forecast"], 1),
+        "actual": round(m["gp2_actual"], 1),
+        "progress": round(m["progress"], 4),
+    } for m in months]
+
     if apply:
         INDEX.write_text(html, encoding="utf-8")
         print(f"\n✅ Đã update {INDEX}")
+        d = read_data_js()
+        if d.get("monthlyPOD") != monthly_pod:
+            d["monthlyPOD"] = monthly_pod
+            write_data_js(d)
+            print("✅ Đã update monthlyPOD → data.js")
     else:
         print("\n(Chạy lại với --apply để ghi vào index.html)")
 

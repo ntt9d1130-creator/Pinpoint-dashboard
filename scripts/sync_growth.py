@@ -364,6 +364,39 @@ def replace_kpi_growth(html, q):
     return html[:start] + new_kpi_html + html[end:]
 
 
+def parse_qualified_brief_by_bd(values):
+    """Parse 'Qualified Brief by BD' table (tab 4, ~row 94).
+    Returns {weeks:[...], rows:[{type,name,values,total}], total:[...], grandTotal}."""
+    header_idx = None
+    for i, row in enumerate(values):
+        if row and str(row[0]).strip() == "BD Type":
+            header_idx = i
+            break
+    if header_idx is None:
+        return None
+    header = values[header_idx]
+    weeks_raw = [str(c).strip() for c in header[2:] if str(c).strip()]
+    n = len(weeks_raw)
+    weeks = []
+    for w in weeks_raw:
+        m = re.match(r"(\d+)/(\d+)", w)
+        weeks.append(f"{int(m.group(1))}/{int(m.group(2))}" if m else w)
+    rows, total = [], None
+    for row in values[header_idx + 1:]:
+        c0 = str(row[0]).strip() if len(row) > 0 else ""
+        c1 = str(row[1]).strip() if len(row) > 1 else ""
+        vals = [to_int(row[2 + j]) if 2 + j < len(row) else 0 for j in range(n)]
+        if c1.lower() == "total" or c0.lower() == "total":
+            total = vals
+            continue
+        if not c1:
+            continue
+        rows.append({"type": c0, "name": c1, "values": vals, "total": sum(vals)})
+    if total is None:
+        total = [sum(r["values"][k] for r in rows) for k in range(n)]
+    return {"weeks": weeks, "rows": rows, "total": total, "grandTotal": sum(total)}
+
+
 def main():
     apply = "--apply" in sys.argv
 
@@ -373,11 +406,13 @@ def main():
     weekly_actual_rows = gws_read("A28:I47")
     sources_rows = gws_read("A49:J72")
     verticals_rows = gws_read("A73:J90")
+    bd_rows = gws_read("A94:N115")
 
     quarter = parse_quarter_summary(quarter_rows)
     weekly = parse_weekly(weekly_actual_rows, "Actual Target")
     sources = parse_breakdown(sources_rows, "Sources")
     verticals = parse_breakdown(verticals_rows, "Vertical")
+    bd_table = parse_qualified_brief_by_bd(bd_rows)
 
     print(f"\n  Quarter Actual: Lead={quarter.get('Actual (Quarter)',{}).get('lead')}, "
           f"Contract={quarter.get('Actual (Quarter)',{}).get('contract')}")
@@ -397,6 +432,8 @@ def main():
     data["verticalData"] = new_vertical
     data["sourceData"] = new_source
     data["sourceGrouped"] = new_grouped
+    if bd_table:
+        data["qualifiedBriefByBD"] = bd_table
 
     # Patch HTML for funnel + KPI cards (still HTML, not JSON)
     html = INDEX.read_text(encoding="utf-8")
