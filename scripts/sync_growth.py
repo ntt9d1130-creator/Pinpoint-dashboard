@@ -405,8 +405,8 @@ def main():
     weekly_target_rows = gws_read("A14:I28")
     weekly_actual_rows = gws_read("A28:I47")
     sources_rows = gws_read("A49:J72")
-    verticals_rows = gws_read("A73:J90")
-    bd_rows = gws_read("A94:N115")
+    verticals_rows = gws_read("A78:J100")
+    bd_rows = gws_read("A94:N120")
 
     quarter = parse_quarter_summary(quarter_rows)
     weekly = parse_weekly(weekly_actual_rows, "Actual Target")
