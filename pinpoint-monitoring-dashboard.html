@@ -170,7 +170,7 @@ tbody tr:hover { background:#f8fafc; }
         <h1>PINPOINT — Bảng Điều Hành</h1>
         <div class="sub">Đơn vị kinh doanh SME | PMAX Total Marketing Partner</div>
     </div>
-    <div class="date">Cập nhật: 20/04/2026</div>
+    <div class="date">Cập nhật: 13/06/2026</div>
 </div>
 
 <!-- Tabs -->
@@ -193,10 +193,10 @@ tbody tr:hover { background:#f8fafc; }
     <div class="highlights">
         <h4>Điểm nổi bật</h4>
         <ul>
-            <li class="good">T4 thực tế đạt 943M — vượt 102.8% so với Runrate</li>
-            <li class="warn">GP2 H1 Forecast chỉ đạt 53.1% Budget — cần đẩy mạnh Q2</li>
-            <li class="good">DPPC chiếm 19.8% GP2 Budget — tỷ lệ lành mạnh</li>
-            <li class="bad">Q2 mới đạt 943M / 3,155M Forecast (29.9%) — Timegone 31%</li>
+            <li class="good">T5 hoàn thành 1,180M — H1 Actual đạt 6,627M (88.3% Forecast)</li>
+            <li class="warn">GP2 H1 đạt 62.5% Budget — Q2 Actual 3,350M (79.3% Forecast)</li>
+            <li class="good">DPPC chiếm 34.1% GP2 Forecast — cần theo dõi chi phí</li>
+            <li class="bad">T6 đang triển khai: Actual 710M / 1,584M Forecast — 41.4% timegone</li>
         </ul>
     </div>
 
@@ -204,23 +204,23 @@ tbody tr:hover { background:#f8fafc; }
     <div class="kpi-row">
         <div class="kpi accent-yellow">
             <div class="kpi-label">GP2 Thực tế H1</div>
-            <div class="kpi-val" style="color:var(--yellow)">4,165M</div>
-            <div class="kpi-sub warn">65.3% so với Forecast</div>
+            <div class="kpi-val" style="color:var(--yellow)">6,627M</div>
+            <div class="kpi-sub warn">88.3% so với Forecast</div>
         </div>
         <div class="kpi">
             <div class="kpi-label">GP2 Dự báo H1</div>
-            <div class="kpi-val">6,377M</div>
-            <div class="kpi-sub warn">53.1% so với Budget</div>
+            <div class="kpi-val">7,501M</div>
+            <div class="kpi-sub warn">62.5% so với Budget</div>
         </div>
         <div class="kpi">
             <div class="kpi-label">GP2 Ngân sách H1</div>
             <div class="kpi-val">12,001M</div>
-            <div class="kpi-sub muted">Hoàn thành: 34.7%</div>
+            <div class="kpi-sub muted">Hoàn thành: 55.2%</div>
         </div>
         <div class="kpi accent-cyan">
             <div class="kpi-label">DPPC H1</div>
-            <div class="kpi-val" style="color:var(--cyan)">1,919M</div>
-            <div class="kpi-sub muted">30.1% GP2 Forecast</div>
+            <div class="kpi-val" style="color:var(--cyan)">2,557M</div>
+            <div class="kpi-sub muted">34.1% GP2 Forecast</div>
         </div>
     </div>
 
@@ -228,23 +228,23 @@ tbody tr:hover { background:#f8fafc; }
     <div class="kpi-row">
         <div class="kpi accent-orange">
             <div class="kpi-label">GP2 Thực tế Q2</div>
-            <div class="kpi-val" style="color:var(--orange)">943M</div>
-            <div class="kpi-sub warn">29.9% so với Forecast</div>
+            <div class="kpi-val" style="color:var(--orange)">3,350M</div>
+            <div class="kpi-sub warn">79.3% so với Forecast</div>
         </div>
         <div class="kpi">
             <div class="kpi-label">GP2 Dự báo Q2</div>
-            <div class="kpi-val">3,155M</div>
-            <div class="kpi-sub warn">45.8% so với Budget</div>
+            <div class="kpi-val">4,224M</div>
+            <div class="kpi-sub warn">61.3% so với Budget</div>
         </div>
         <div class="kpi">
             <div class="kpi-label">GP2 Ngân sách Q2</div>
             <div class="kpi-val">6,885M</div>
-            <div class="kpi-sub muted">Hoàn thành: 13.7%</div>
+            <div class="kpi-sub muted">Hoàn thành: 48.7%</div>
         </div>
         <div class="kpi accent-cyan">
             <div class="kpi-label">Q2 Thời gian đã qua</div>
-            <div class="kpi-val" style="color:var(--cyan)">31.0%</div>
-            <div class="kpi-sub muted">T4: hoàn tất 93%</div>
+            <div class="kpi-val" style="color:var(--cyan)">80.5%</div>
+            <div class="kpi-sub muted">T6: hoàn tất 41.4%</div>
         </div>
     </div>
 
@@ -665,8 +665,8 @@ new Chart(document.getElementById('chartGP2Monthly'), {
         labels: ['T1','T2','T3','T4','T5','T6'],
         datasets: [
             { label: 'Budget', data: [1988, 1097, 2031, 2295, 2295, 2295], backgroundColor: 'rgba(59,130,246,0.2)', borderColor: '#3b82f6', borderWidth: 1, borderRadius: 4 },
-            { label: 'Forecast', data: [1122.0, 880.0, 1220.0, 985.0, 1290.0, 880.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
-            { label: 'Actual', data: [1122.0, 880.0, 1220.0, 943.0, 0.0, 0.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
+            { label: 'Forecast', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1584.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
+            { label: 'Actual', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 710.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
         ]
     },
     options: {
@@ -680,11 +680,11 @@ new Chart(document.getElementById('chartGP2Monthly'), {
 new Chart(document.getElementById('chartEfficiency'), {
     type: 'line',
     data: {
-        labels: ['T1','T2','T3','T4'],
+        labels: ['T1','T2','T3','T4','T5','T6'],
         datasets: [
-            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 95.7], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 102.8], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-            { label: 'Target 100%', data: [100,100,100,100], borderColor: '#ef4444', borderDash: [5,5], fill: false, tension: 0, pointRadius: 0 }
+            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 100.0, 100.0, 44.8], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 100.0, 100.0, 108.3], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: 'Target 100%', data: [100,100,100,100,100,100], borderColor: '#ef4444', borderDash: [5,5], fill: false, tension: 0, pointRadius: 0 }
         ]
     },
     options: {
@@ -719,8 +719,8 @@ new Chart(document.getElementById('chartFuncPerf'), {
     data: {
         labels: ['MEDIA','CREATIVE','LIVESTREAM','INFLUENCER','TECH_DATA'],
         datasets: [
-            { label: 'Forecast', data: [775.0, 59.0, 104.0, 45.0, 2.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
-            { label: 'Actual', data: [805.5, 47.4, 90.2, 0.0, 0.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
+            { label: 'Forecast', data: [3400.0, 200.0, 350.0, 100.0, 10.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
+            { label: 'Actual', data: [5500.0, 180.0, 320.0, 50.0, 5.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
         ]
     },
     options: {
@@ -732,10 +732,17 @@ new Chart(document.getElementById('chartFuncPerf'), {
 
 // ============ CHART 5: Weekly Growth ============
 const weeklyData = [
-    { w: '4/1', lead: 22, ql: 12, brief: 10, qb: 9, qs: 5, vc: 2, contract: 3 },
-    { w: '4/6', lead: 30, ql: 12, brief: 8, qb: 6, qs: 8, vc: 2, contract: 0 },
-    { w: '4/13', lead: 53, ql: 29, brief: 16, qb: 12, qs: 9, vc: 0, contract: 3 },
-    { w: '4/20', lead: 18, ql: 8, brief: 10, qb: 9, qs: 6, vc: 5, contract: 2 },
+    { w: '4/1', lead: 23, ql: 13, brief: 10, qb: 9, qs: 6, vc: 2, contract: 2 },
+    { w: '4/6', lead: 30, ql: 13, brief: 9, qb: 6, qs: 8, vc: 2, contract: 0 },
+    { w: '4/13', lead: 61, ql: 29, brief: 17, qb: 12, qs: 9, vc: 0, contract: 3 },
+    { w: '4/20', lead: 18, ql: 8, brief: 11, qb: 11, qs: 11, vc: 5, contract: 2 },
+    { w: '4/27', lead: 8, ql: 4, brief: 3, qb: 3, qs: 5, vc: 3, contract: 0 },
+    { w: '5/4', lead: 37, ql: 18, brief: 17, qb: 12, qs: 11, vc: 9, contract: 1 },
+    { w: '5/11', lead: 23, ql: 12, brief: 4, qb: 8, qs: 9, vc: 6, contract: 3 },
+    { w: '5/18', lead: 27, ql: 16, brief: 13, qb: 10, qs: 4, vc: 4, contract: 7 },
+    { w: '5/25', lead: 32, ql: 16, brief: 9, qb: 11, qs: 9, vc: 3, contract: 3 },
+    { w: '6/1', lead: 17, ql: 17, brief: 16, qb: 14, qs: 7, vc: 0, contract: 2 },
+    { w: '6/8', lead: 30, ql: 28, brief: 20, qb: 21, qs: 9, vc: 2, contract: 2 },
 ];
 
 new Chart(document.getElementById('chartWeekly'), {
@@ -965,20 +972,20 @@ if (ganttLabel) ganttLabel.innerHTML = '📍 Hôm nay: <strong>' + todayStr + '<
 
 // ============ VERTICAL DATA ============
 const verticalData = [
-    { v: 'Auto', lead: 4, ql: 3, brief: 3, qb: 3, qs: 1, vc: 0, nvc: 0, contract: 1, exec: 0 },
-    { v: 'Beauty', lead: 12, ql: 7, brief: 5, qb: 4, qs: 2, vc: 2, nvc: 0, contract: 1, exec: 1 },
-    { v: 'Digital Product', lead: 6, ql: 1, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Education', lead: 9, ql: 7, brief: 6, qb: 6, qs: 3, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { v: 'FMCG', lead: 14, ql: 6, brief: 3, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Fashion', lead: 15, ql: 7, brief: 6, qb: 3, qs: 3, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { v: 'Finance', lead: 4, ql: 3, brief: 3, qb: 3, qs: 3, vc: 0, nvc: 0, contract: 1, exec: 0 },
-    { v: 'Health Care', lead: 4, ql: 3, brief: 3, qb: 3, qs: 2, vc: 2, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Home & Electronics', lead: 19, ql: 4, brief: 2, qb: 1, qs: 2, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { v: 'Others', lead: 35, ql: 17, brief: 10, qb: 9, qs: 9, vc: 2, nvc: 1, contract: 1, exec: 0 },
-    { v: 'Real estate', lead: 4, ql: 1, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 1, exec: 0 },
-    { v: 'Retail', lead: 0, ql: 0, brief: 1, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Travel', lead: 5, ql: 3, brief: 3, qb: 3, qs: 2, vc: 1, nvc: 0, contract: 0, exec: 0 },
-];
+    { v: 'Auto', lead: 7, ql: 6, brief: 6, qb: 7, qs: 3, vc: 1, nvc: 3, contract: 2, exec: 0 },
+    { v: 'Beauty', lead: 30, ql: 17, brief: 11, qb: 9, qs: 7, vc: 3, nvc: 21, contract: 1, exec: 0 },
+    { v: 'Digital Product', lead: 9, ql: 2, brief: 1, qb: 1, qs: 1, vc: 2, nvc: 0, contract: 0, exec: 0 },
+    { v: 'Education', lead: 31, ql: 20, brief: 14, qb: 14, qs: 8, vc: 3, nvc: 7, contract: 2, exec: 0 },
+    { v: 'FMCG', lead: 35, ql: 20, brief: 10, qb: 12, qs: 9, vc: 1, nvc: 8, contract: 0, exec: 0 },
+    { v: 'Fashion', lead: 36, ql: 24, brief: 14, qb: 15, qs: 10, vc: 7, nvc: 12, contract: 5, exec: 0 },
+    { v: 'Finance', lead: 10, ql: 8, brief: 7, qb: 6, qs: 7, vc: 2, nvc: 5, contract: 3, exec: 0 },
+    { v: 'Health Care', lead: 23, ql: 15, brief: 12, qb: 12, qs: 9, vc: 6, nvc: 6, contract: 4, exec: 0 },
+    { v: 'Home & Electronics', lead: 27, ql: 10, brief: 7, qb: 6, qs: 7, vc: 4, nvc: 11, contract: 4, exec: 0 },
+    { v: 'Others', lead: 74, ql: 38, brief: 24, qb: 23, qs: 22, vc: 4, nvc: 28, contract: 2, exec: 0 },
+    { v: 'Real estate', lead: 10, ql: 7, brief: 6, qb: 3, qs: 1, vc: 0, nvc: 4, contract: 1, exec: 0 },
+    { v: 'Retail', lead: 4, ql: 3, brief: 3, qb: 2, qs: 1, vc: 1, nvc: 3, contract: 0, exec: 0 },
+    { v: 'Travel', lead: 10, ql: 5, brief: 3, qb: 3, qs: 3, vc: 2, nvc: 2, contract: 0, exec: 0 },
+]];
 
 // Populate vertical table
 const vBody = document.getElementById('verticalTableBody');
@@ -1042,26 +1049,35 @@ new Chart(document.getElementById('chartVerticalCR'), {
 
 // ============ SOURCE DATA ============
 const sourceData = [
-    { s: 'Marketing_Event_Hosted event', lead: 32, ql: 7, brief: 2, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Research_Social', lead: 24, ql: 11, brief: 6, qb: 5, qs: 4, vc: 0, nvc: 1, contract: 1, exec: 0 },
-    { s: 'Marketing_Event_Guest speak', lead: 23, ql: 7, brief: 3, qb: 3, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Relationship_Direct', lead: 16, ql: 15, brief: 15, qb: 14, qs: 12, vc: 5, nvc: 0, contract: 1, exec: 0 },
-    { s: 'Scrapping_Research_Google', lead: 9, ql: 0, brief: 0, qb: 0, qs: 1, vc: 1, nvc: 0, contract: 3, exec: 0 },
-    { s: 'Direct_Hotline_Social inbox', lead: 5, ql: 5, brief: 4, qb: 2, qs: 2, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Phone', lead: 4, ql: 4, brief: 4, qb: 2, qs: 3, vc: 1, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Live chat', lead: 4, ql: 3, brief: 3, qb: 3, qs: 1, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { s: 'Scrapping_Event_Joined event', lead: 4, ql: 3, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Contact list_Non-Paid', lead: 2, ql: 2, brief: 2, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Marketing_Ad_Facebook', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Email', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Direct_Website_Main contact form', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Contact list_Paid', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Relationship_Referral', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Referral_Partner_Non-Strategic', lead: 1, ql: 1, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Referral_Partner_Strategic', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 1, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Referral_PMAX_Passive_MKTLead', lead: 0, ql: 1, brief: 1, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Referral_PMAX_Referral', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 0, contract: 1, exec: 0 },
-];
+    { s: 'Direct_Hotline_Email', lead: 4, ql: 4, brief: 2, qb: 1, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Direct_Hotline_Live chat', lead: 16, ql: 13, brief: 12, qb: 10, qs: 8, vc: 3, nvc: 11, contract: 1, exec: 0 },
+    { s: 'Direct_Hotline_Phone', lead: 25, ql: 25, brief: 12, qb: 10, qs: 9, vc: 2, nvc: 5, contract: 0, exec: 0 },
+    { s: 'Direct_Hotline_Social inbox', lead: 10, ql: 10, brief: 9, qb: 6, qs: 5, vc: 3, nvc: 1, contract: 2, exec: 0 },
+    { s: 'Direct_Website_Main contact form', lead: 2, ql: 2, brief: 1, qb: 1, qs: 1, vc: 1, nvc: 0, contract: 1, exec: 0 },
+    { s: 'Marketing_Ad_Facebook', lead: 5, ql: 5, brief: 3, qb: 4, qs: 1, vc: 0, nvc: 5, contract: 0, exec: 0 },
+    { s: 'Marketing_BD Inbound_ReApproach', lead: 18, ql: 4, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 5, contract: 0, exec: 0 },
+    { s: 'Marketing_Event_Guest speak', lead: 27, ql: 7, brief: 3, qb: 3, qs: 2, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Marketing_Event_Hosted event', lead: 37, ql: 8, brief: 3, qb: 2, qs: 2, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Referral_Active', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Referral_Client_Current PIC existing', lead: 0, ql: 0, brief: 0, qb: 1, qs: 0, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Referral_Client_Current PIC old', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Referral_Employee_Existing', lead: 3, ql: 3, brief: 4, qb: 5, qs: 3, vc: 2, nvc: 5, contract: 2, exec: 0 },
+    { s: 'Referral_PMAX_Active', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 7, contract: 0, exec: 0 },
+    { s: 'Referral_PMAX_Passive', lead: 1, ql: 1, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 2, contract: 0, exec: 0 },
+    { s: 'Referral_PMAX_Passive_MKTLead', lead: 0, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Referral_PMAX_Referral', lead: 0, ql: 0, brief: 0, qb: 1, qs: 0, vc: 0, nvc: 1, contract: 1, exec: 0 },
+    { s: 'Referral_Partner_Non-Strategic', lead: 2, ql: 2, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Referral_Partner_Strategic', lead: 6, ql: 3, brief: 2, qb: 2, qs: 2, vc: 1, nvc: 2, contract: 1, exec: 0 },
+    { s: 'Scrapping_BOD', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Scrapping_Community_Group', lead: 2, ql: 2, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
+    { s: 'Scrapping_Contact list_Non-Paid', lead: 2, ql: 4, brief: 3, qb: 2, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
+    { s: 'Scrapping_Contact list_Paid', lead: 2, ql: 1, brief: 1, qb: 2, qs: 1, vc: 1, nvc: 1, contract: 1, exec: 0 },
+    { s: 'Scrapping_Event_Joined event', lead: 13, ql: 5, brief: 2, qb: 2, qs: 2, vc: 1, nvc: 0, contract: 1, exec: 0 },
+    { s: 'Scrapping_Relationship_Direct', lead: 55, ql: 47, brief: 37, qb: 36, qs: 30, vc: 13, nvc: 16, contract: 5, exec: 0 },
+    { s: 'Scrapping_Relationship_Referral', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 2, contract: 0, exec: 0 },
+    { s: 'Scrapping_Research_Google', lead: 16, ql: 1, brief: 1, qb: 3, qs: 3, vc: 3, nvc: 9, contract: 3, exec: 0 },
+    { s: 'Scrapping_Research_Social', lead: 60, ql: 26, brief: 17, qb: 16, qs: 14, vc: 6, nvc: 29, contract: 6, exec: 0 },
+]];
 
 // Populate source table
 const sBody = document.getElementById('sourceTableBody');
@@ -1084,10 +1100,10 @@ sBody.innerHTML += `<tr style="font-weight:700;border-top:2px solid var(--border
 </tr>`;
 
 const sourceGrouped = [
-    { g: 'Scrapping', lead: 57, ql: 32, brief: 25, contract: 5, color: '#3b82f6' },
-    { g: 'Marketing', lead: 56, ql: 14, brief: 5, contract: 0, color: '#eab308' },
-    { g: 'Direct', lead: 15, ql: 13, brief: 12, contract: 1, color: '#22c55e' },
-    { g: 'Referral', lead: 2, ql: 3, brief: 3, contract: 1, color: '#a855f7' },
+    { g: 'Scrapping', lead: 151, ql: 86, brief: 62, contract: 16, color: '#3b82f6' },
+    { g: 'Marketing', lead: 87, ql: 24, brief: 10, contract: 0, color: '#eab308' },
+    { g: 'Direct', lead: 57, ql: 54, brief: 36, contract: 4, color: '#22c55e' },
+    { g: 'Referral', lead: 13, ql: 11, brief: 10, contract: 4, color: '#a855f7' },
 ];
 
 // Source Lead chart (grouped)
