@@ -170,7 +170,7 @@ tbody tr:hover { background:#f8fafc; }
         <h1>PINPOINT — Bảng Điều Hành</h1>
         <div class="sub">Đơn vị kinh doanh SME | PMAX Total Marketing Partner</div>
     </div>
-    <div class="date">Cập nhật: 20/06/2026</div>
+    <div class="date">Cập nhật: 28/06/2026</div>
 </div>
 
 <!-- Tabs -->
@@ -193,10 +193,10 @@ tbody tr:hover { background:#f8fafc; }
     <div class="highlights">
         <h4>Điểm nổi bật</h4>
         <ul>
-            <li class="good">H1 Actual đạt 6,820M (90.2% Forecast) — T6 đang 903M/1,646M</li>
-            <li class="warn">Q2 Actual 3,543M (82.7% Forecast) — tiến độ tốt</li>
-            <li class="good">DPPC chiếm 35.2% GP2 Forecast — cần theo dõi chi phí</li>
-            <li class="bad">T6 đang 65.5% timegone: Actual 903M / 1,646M Forecast (54.9%)</li>
+            <li class="good">H1 Actual đạt 7,180M (94.9% Forecast) — gần chạm target</li>
+            <li class="warn">Q2 Actual 3,903M (91.1% Forecast) — T6 còn 1 tuần</li>
+            <li class="good">DPPC chiếm 36.8% GP2 Forecast — cần theo dõi chi phí</li>
+            <li class="bad">T6 đạt 1,263M / 1,646M Forecast (76.7%) — timegone 93.1%</li>
         </ul>
     </div>
 
@@ -204,8 +204,8 @@ tbody tr:hover { background:#f8fafc; }
     <div class="kpi-row">
         <div class="kpi accent-yellow">
             <div class="kpi-label">GP2 Thực tế H1</div>
-            <div class="kpi-val" style="color:var(--yellow)">6,820M</div>
-            <div class="kpi-sub warn">90.2% so với Forecast</div>
+            <div class="kpi-val" style="color:var(--yellow)">7,180M</div>
+            <div class="kpi-sub warn">94.9% so với Forecast</div>
         </div>
         <div class="kpi">
             <div class="kpi-label">GP2 Dự báo H1</div>
@@ -215,12 +215,12 @@ tbody tr:hover { background:#f8fafc; }
         <div class="kpi">
             <div class="kpi-label">GP2 Ngân sách H1</div>
             <div class="kpi-val">12,001M</div>
-            <div class="kpi-sub muted">Hoàn thành: 56.8%</div>
+            <div class="kpi-sub muted">Hoàn thành: 59.8%</div>
         </div>
         <div class="kpi accent-cyan">
             <div class="kpi-label">DPPC H1</div>
-            <div class="kpi-val" style="color:var(--cyan)">2,663M</div>
-            <div class="kpi-sub muted">35.2% GP2 Forecast</div>
+            <div class="kpi-val" style="color:var(--cyan)">2,785M</div>
+            <div class="kpi-sub muted">36.8% GP2 Forecast</div>
         </div>
     </div>
 
@@ -228,8 +228,8 @@ tbody tr:hover { background:#f8fafc; }
     <div class="kpi-row">
         <div class="kpi accent-orange">
             <div class="kpi-label">GP2 Thực tế Q2</div>
-            <div class="kpi-val" style="color:var(--orange)">3,543M</div>
-            <div class="kpi-sub warn">82.7% so với Forecast</div>
+            <div class="kpi-val" style="color:var(--orange)">3,903M</div>
+            <div class="kpi-sub warn">91.1% so với Forecast</div>
         </div>
         <div class="kpi">
             <div class="kpi-label">GP2 Dự báo Q2</div>
@@ -239,12 +239,12 @@ tbody tr:hover { background:#f8fafc; }
         <div class="kpi">
             <div class="kpi-label">GP2 Ngân sách Q2</div>
             <div class="kpi-val">6,885M</div>
-            <div class="kpi-sub muted">Hoàn thành: 51.5%</div>
+            <div class="kpi-sub muted">Hoàn thành: 56.7%</div>
         </div>
         <div class="kpi accent-cyan">
             <div class="kpi-label">Q2 Thời gian đã qua</div>
-            <div class="kpi-val" style="color:var(--cyan)">88.5%</div>
-            <div class="kpi-sub muted">T6: hoàn tất 65.5%</div>
+            <div class="kpi-val" style="color:var(--cyan)">97.7%</div>
+            <div class="kpi-sub muted">T6: hoàn tất 93.1%</div>
         </div>
     </div>
 
@@ -666,7 +666,7 @@ new Chart(document.getElementById('chartGP2Monthly'), {
         datasets: [
             { label: 'Budget', data: [1988, 1097, 2031, 2295, 2295, 2295], backgroundColor: 'rgba(59,130,246,0.2)', borderColor: '#3b82f6', borderWidth: 1, borderRadius: 4 },
             { label: 'Forecast', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1646.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
-            { label: 'Actual', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 903.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
+            { label: 'Actual', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1263.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
         ]
     },
     options: {
@@ -682,8 +682,8 @@ new Chart(document.getElementById('chartEfficiency'), {
     data: {
         labels: ['T1','T2','T3','T4','T5','T6'],
         datasets: [
-            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 100.0, 100.0, 54.9], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 100.0, 100.0, 83.7], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 100.0, 100.0, 76.7], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 100.0, 100.0, 82.4], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
             { label: 'Target 100%', data: [100,100,100,100,100,100], borderColor: '#ef4444', borderDash: [5,5], fill: false, tension: 0, pointRadius: 0 }
         ]
     },
@@ -744,6 +744,7 @@ const weeklyData = [
     { w: '6/1', lead: 17, ql: 17, brief: 16, qb: 14, qs: 7, vc: 0, contract: 2 },
     { w: '6/8', lead: 40, ql: 41, brief: 30, qb: 21, qs: 10, vc: 3, contract: 2 },
     { w: '6/15', lead: 119, ql: 109, brief: 30, qb: 29, qs: 13, vc: 1, contract: 1 },
+    { w: '6/22', lead: 250, ql: 80, brief: 50, qb: 17, qs: 13, vc: 5, contract: 2 },
 ];
 
 new Chart(document.getElementById('chartWeekly'), {
