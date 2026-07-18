@@ -177,7 +177,6 @@ tbody tr:hover { background:#f8fafc; }
 <div class="tabs">
     <button class="tab active" onclick="showSec('pod')">Tổng quan POD</button>
     <button class="tab" onclick="showSec('growth')">Tăng trưởng</button>
-    <button class="tab" onclick="showSec('sales')">Hoạt động Sales</button>
     <button class="tab" onclick="showSec('account')">Quản lý Account</button>
     <button class="tab" onclick="showSec('pic')">PIC Account</button>
     <button class="tab" onclick="showSec('product')">Sản phẩm</button>
@@ -196,7 +195,7 @@ tbody tr:hover { background:#f8fafc; }
             <li class="good">H1 Actual đạt 7,523M — vượt Forecast 101.4%!</li>
             <li class="good">Q2 Actual 4,246M — vượt Forecast 102.6%!</li>
             <li class="warn">DPPC chiếm 38.0% GP2 Forecast — chi phí tăng nhẹ</li>
-            <li class="good">T6 vượt Forecast: 1,606M / 1,499M (107.1%)</li>
+            <li class="good">T7 đang chạy: 584M / 1,438M Forecast — 57% thời gian, Runrate 71.7%</li>
         </ul>
     </div>
 
@@ -266,6 +265,7 @@ tbody tr:hover { background:#f8fafc; }
                 <tr><td><strong>T4</strong></td><td>2,295</td><td>1,460</td><td>1,460</td><td>100%</td><td>63.6%</td><td><span class="badge badge-green">100.0%</span></td><td><span class="badge badge-green">100.0%</span></td><td>480</td><td>32.9%</td></tr>
                 <tr><td><strong>T5</strong></td><td>2,295</td><td>1,180</td><td>1,180</td><td>100%</td><td>51.4%</td><td><span class="badge badge-green">100.0%</span></td><td><span class="badge badge-green">100.0%</span></td><td>450</td><td>38.1%</td></tr>
                 <tr><td><strong>T6</strong></td><td>2,295</td><td>1,499</td><td>1,606</td><td>100%</td><td>69.9%</td><td><span class="badge badge-green">107.1%</span></td><td><span class="badge badge-green">107.1%</span></td><td>440</td><td>27.4%</td></tr>
+                <tr><td><strong>T7</strong></td><td>2,962</td><td>1,438</td><td>584</td><td>57%</td><td>48.5%</td><td><span class="badge badge-red">40.6%</span></td><td><span class="badge badge-yellow">71.7%</span></td><td>299</td><td>51.2%</td></tr>
                 <tr style="font-weight:700; border-top:2px solid var(--border);"><td>H1 2026</td><td>12,001</td><td>7,416</td><td>7,523</td><td></td><td>61.8%</td><td><span class="badge badge-green">101.4%</span></td><td><span class="badge badge-green">101.4%</span></td><td>2,815</td><td>37.4%</td></tr>
             </tbody>
         </table>
@@ -312,98 +312,42 @@ tbody tr:hover { background:#f8fafc; }
     <div class="highlights">
         <h4>Điểm nổi bật</h4>
         <ul>
-            <li class="good">Lead 425 vượt RT target 145% — QL 216 đạt 169% RT, Brief 107 đạt 123% RT</li>
-            <li class="good">Tuần 7-13/7: Lead 301 tăng mạnh — momentum tốt đầu Q3</li>
-            <li class="warn">QB trở xuống chưa đạt RT target — QS 55%, VC 46%</li>
-            <li class="bad">Contract chỉ 3 (14% RT) — cần đẩy mạnh closing pipeline</li>
+            <li class="good">Lead 714 vượt RT target 155% — QL 349 đạt 164% RT, Brief 149 đạt 103% RT</li>
+            <li class="good">Tuần 14-20/7: Lead 330, QS 35 tăng mạnh — momentum tiếp tục</li>
+            <li class="warn">VC chỉ 21% RT, Contract 20% RT — cần đẩy mạnh closing</li>
+            <li class="bad">Contract 7 (20% RT target) — pipeline cần chuyển đổi nhanh hơn</li>
         </ul>
     </div>
 
     <!-- Funnel -->
     <div class="funnel">
-        <div class="funnel-step"><div class="funnel-lbl">Lead</div><div class="funnel-val" style="color:var(--blue)">425</div><div class="funnel-sub" style="color:var(--green)">Target: 3,336 | 13%</div></div>
+        <div class="funnel-step"><div class="funnel-lbl">Lead</div><div class="funnel-val" style="color:var(--blue)">714</div><div class="funnel-sub" style="color:var(--green)">Target: 3,336 | 21%</div></div>
         <div class="funnel-arr">→</div>
-        <div class="funnel-step"><div class="funnel-lbl">QL</div><div class="funnel-val" style="color:var(--cyan)">216</div><div class="funnel-sub" style="color:var(--green)">CR: 50.8% | Target 1,648</div></div>
+        <div class="funnel-step"><div class="funnel-lbl">QL</div><div class="funnel-val" style="color:var(--cyan)">349</div><div class="funnel-sub" style="color:var(--green)">CR: 48.9% | Target 1,648</div></div>
         <div class="funnel-arr">→</div>
-        <div class="funnel-step"><div class="funnel-lbl">Brief</div><div class="funnel-val" style="color:var(--purple)">107</div><div class="funnel-sub" style="color:var(--green)">CR: 49.5% | Target 1,137</div></div>
+        <div class="funnel-step"><div class="funnel-lbl">Brief</div><div class="funnel-val" style="color:var(--purple)">149</div><div class="funnel-sub" style="color:var(--green)">CR: 42.7% | Target 1,137</div></div>
         <div class="funnel-arr">→</div>
-        <div class="funnel-step"><div class="funnel-lbl">QB</div><div class="funnel-val" style="color:var(--orange)">66</div><div class="funnel-sub" style="color:var(--yellow)">CR: 61.7% | Target 910</div></div>
+        <div class="funnel-step"><div class="funnel-lbl">QB</div><div class="funnel-val" style="color:var(--orange)">102</div><div class="funnel-sub" style="color:var(--yellow)">CR: 68.5% | Target 910</div></div>
         <div class="funnel-arr">→</div>
-        <div class="funnel-step"><div class="funnel-lbl">Gửi báo giá</div><div class="funnel-val" style="color:var(--yellow)">36</div><div class="funnel-sub" style="color:var(--red)">CR: 54.5% | Target 864</div></div>
+        <div class="funnel-step"><div class="funnel-lbl">Gửi báo giá</div><div class="funnel-val" style="color:var(--yellow)">64</div><div class="funnel-sub" style="color:var(--red)">CR: 62.7% | Target 864</div></div>
         <div class="funnel-arr">→</div>
-        <div class="funnel-step"><div class="funnel-lbl">Xác nhận</div><div class="funnel-val" style="color:var(--pink)">12</div><div class="funnel-sub" style="color:var(--red)">CR: 33.3% | Target 336</div></div>
+        <div class="funnel-step"><div class="funnel-lbl">Xác nhận</div><div class="funnel-val" style="color:var(--pink)">9</div><div class="funnel-sub" style="color:var(--red)">CR: 14.1% | Target 336</div></div>
         <div class="funnel-arr">→</div>
-        <div class="funnel-step" style="border:2px solid var(--red);"><div class="funnel-lbl">Hợp đồng</div><div class="funnel-val" style="color:var(--red)">3</div><div class="funnel-sub" style="color:var(--red)">CR: 25.0% | Target 268</div></div>
+        <div class="funnel-step" style="border:2px solid var(--red);"><div class="funnel-lbl">Hợp đồng</div><div class="funnel-val" style="color:var(--red)">7</div><div class="funnel-sub" style="color:var(--red)">CR: 77.8% | Target 268</div></div>
     </div>
 
     <div class="kpi-row">
-        <div class="kpi accent-green"><div class="kpi-label">Lead đạt EOQ</div><div class="kpi-val" style="color:var(--green)">13%</div><div class="kpi-sub good">Runrate: 100%</div></div>
-        <div class="kpi accent-green"><div class="kpi-label">QL đạt EOQ</div><div class="kpi-val" style="color:var(--green)">13%</div><div class="kpi-sub good">Runrate: 151%</div></div>
-        <div class="kpi accent-green"><div class="kpi-label">Brief đạt EOQ</div><div class="kpi-val" style="color:var(--green)">9%</div><div class="kpi-sub good">Runrate: 159%</div></div>
-        <div class="kpi accent-red"><div class="kpi-label">Hợp đồng đạt EOQ</div><div class="kpi-val" style="color:var(--red)">1%</div><div class="kpi-sub warn">Runrate: 14%</div></div>
+        <div class="kpi accent-green"><div class="kpi-label">Lead đạt EOQ</div><div class="kpi-val" style="color:var(--green)">21%</div><div class="kpi-sub good">Runrate: 155%</div></div>
+        <div class="kpi accent-green"><div class="kpi-label">QL đạt EOQ</div><div class="kpi-val" style="color:var(--green)">21%</div><div class="kpi-sub good">Runrate: 164%</div></div>
+        <div class="kpi accent-green"><div class="kpi-label">Brief đạt EOQ</div><div class="kpi-val" style="color:var(--green)">13%</div><div class="kpi-sub good">Runrate: 103%</div></div>
+        <div class="kpi accent-red"><div class="kpi-label">Hợp đồng đạt EOQ</div><div class="kpi-val" style="color:var(--red)">3%</div><div class="kpi-sub warn">Runrate: 20%</div></div>
     </div>
 
     <!-- Weekly Chart -->
     <div class="chart-row"><div class="chart-box" style="grid-column:1/-1;"><h3>Hiệu suất theo tuần — Lead & Hợp đồng</h3><canvas id="chartWeekly"></canvas></div></div>
     <div class="tbl-wrap"><h3>Bảng chi tiết theo tuần</h3><table><thead><tr><th>Tuần</th><th>Lead</th><th>QL</th><th>Brief</th><th>QB</th><th>Gửi BG</th><th>Xác nhận</th><th>Hợp đồng</th></tr></thead><tbody id="weeklyTableBody"></tbody></table></div>
-
-    <!-- Vertical -->
-    <div class="chart-row">
-        <div class="chart-box"><h3>Phễu theo ngành — Lead đến Hợp đồng</h3><canvas id="chartVerticalFunnel"></canvas></div>
-        <div class="chart-box"><h3>Tỷ lệ chuyển đổi Lead → Hợp đồng theo ngành</h3><canvas id="chartVerticalCR"></canvas></div>
-    </div>
-    <div class="tbl-wrap"><h3>Chi tiết theo ngành</h3><table><thead><tr><th>Ngành</th><th>Lead</th><th>QL</th><th>Brief</th><th>QB</th><th>QS</th><th>VC</th><th>NVC</th><th>Hợp đồng</th><th>Triển khai</th><th>CR L→QL</th><th>CR QL→Brief</th><th>CR Brief→HĐ</th></tr></thead><tbody id="verticalTableBody"></tbody></table></div>
-
-    <!-- Source -->
-    <div class="chart-row">
-        <div class="chart-box"><h3>Số lượng Lead theo nhóm nguồn</h3><canvas id="chartSourceLead"></canvas></div>
-        <div class="chart-box"><h3>Chuyển đổi Hợp đồng theo nhóm nguồn</h3><canvas id="chartSourceContract"></canvas></div>
-    </div>
-    <div class="tbl-wrap"><h3>Chi tiết theo nguồn</h3><table><thead><tr><th>Nguồn</th><th>Lead</th><th>QL</th><th>Brief</th><th>QB</th><th>QS</th><th>VC</th><th>NVC</th><th>Hợp đồng</th><th>Triển khai</th><th>CR L→QL</th><th>CR L→HĐ</th></tr></thead><tbody id="sourceTableBody"></tbody></table></div>
 </div>
 
-<!-- ===== SECTION 3: HOẠT ĐỘNG SALES ===== -->
-<div id="sales" class="sec">
-    <div class="sec-title">Hoạt động đội Sales — QTD Q2 (01/04 - 28/04/2026)</div>
-
-    <div class="highlights">
-        <h4>Điểm nổi bật</h4>
-        <ul>
-            <li class="good">Mai Thư — Top performer: vượt Brief (126.7%) và Hợp đồng (133.3%)</li>
-            <li class="warn">Activities tổng mới đạt 49.9% target — chưa đến 50%</li>
-            <li class="bad">Hợp đồng team: 5/11 target (44.4%) — cần đẩy mạnh closing</li>
-            <li class="warn">Tài Hoa & Trang Cao: 0 hợp đồng, cần hỗ trợ chuyển đổi</li>
-        </ul>
-    </div>
-
-    <div class="kpi-row">
-        <div class="kpi"><div class="kpi-label">Tổng Activities</div><div class="kpi-val">1,236</div><div class="kpi-sub warn">49.9% target (2,475)</div></div>
-        <div class="kpi"><div class="kpi-label">Q.Activities</div><div class="kpi-val">777</div><div class="kpi-sub warn">78.5% target (990)</div></div>
-        <div class="kpi accent-green"><div class="kpi-label">Cuộc họp</div><div class="kpi-val">51</div><div class="kpi-sub good">77.3% target (66)</div></div>
-        <div class="kpi accent-yellow"><div class="kpi-label">Brief</div><div class="kpi-val">40</div><div class="kpi-sub warn">66.7% target (60)</div></div>
-        <div class="kpi accent-red"><div class="kpi-label">Hợp đồng</div><div class="kpi-val" style="color:var(--red)">5</div><div class="kpi-sub bad">44.4% target (11)</div></div>
-    </div>
-
-    <div class="chart-row">
-        <div class="chart-box"><h3>Target vs Thực tế theo PIC</h3><canvas id="chartSalesPIC"></canvas></div>
-        <div class="chart-box"><h3>% Đạt target theo chỉ số</h3><canvas id="chartSalesMetrics"></canvas></div>
-    </div>
-
-    <div class="tbl-wrap">
-        <h3>Chi tiết từng PIC</h3>
-        <table>
-            <thead><tr><th>Vai trò</th><th>PIC</th><th>Activities<br><small>Target → TT</small></th><th>%</th><th>Q.Act<br><small>Target → TT</small></th><th>%</th><th>Họp<br><small>Target → TT</small></th><th>%</th><th>Brief<br><small>Target → TT</small></th><th>%</th><th>HĐ<br><small>Target → TT</small></th><th>%</th><th>Ghi chú</th></tr></thead>
-            <tbody>
-                <tr><td><span class="badge badge-purple">Lead</span></td><td><strong>Nguyệt Phùng</strong></td><td>— → —</td><td>—</td><td>— → —</td><td>—</td><td>8 → 8</td><td><span class="badge badge-green">100.0%</span></td><td>8 → 5</td><td><span class="badge badge-yellow">66.7%</span></td><td>2 → 1</td><td><span class="badge badge-yellow">66.7%</span></td><td></td></tr>
-                <tr><td><span class="badge badge-blue">Exe</span></td><td><strong>Tài Hoa</strong></td><td>900 → 642</td><td><span class="badge badge-yellow">71.3%</span></td><td>360 → 271</td><td><span class="badge badge-green">75.3%</span></td><td>18 → 10</td><td><span class="badge badge-yellow">55.6%</span></td><td>15 → 5</td><td><span class="badge badge-red">33.3%</span></td><td>3 → 0</td><td><span class="badge badge-red">0.0%</span></td><td style="font-size:10px;white-space:normal;max-width:180px;">Activities OK, chuyển đổi thấp</td></tr>
-                <tr><td><span class="badge badge-blue">Exe</span></td><td><strong>Mai Thư</strong></td><td>750 → 278</td><td><span class="badge badge-red">37.1%</span></td><td>300 → 235</td><td><span class="badge badge-green">78.3%</span></td><td>15 → 15</td><td><span class="badge badge-green">100.0%</span></td><td>15 → 19</td><td><span class="badge badge-green">126.7%</span></td><td>3 → 4</td><td><span class="badge badge-green">133.3%</span></td><td style="font-size:10px;white-space:normal;max-width:180px;">Top performer, vượt Brief &amp; HĐ</td></tr>
-                <tr><td><span class="badge badge-blue">Exe</span></td><td><strong>Trang Cao</strong></td><td>825 → 316</td><td><span class="badge badge-red">38.3%</span></td><td>330 → 271</td><td><span class="badge badge-green">82.1%</span></td><td>17 → 12</td><td><span class="badge badge-yellow">70.6%</span></td><td>15 → 8</td><td><span class="badge badge-yellow">53.3%</span></td><td>3 → 0</td><td><span class="badge badge-red">0.0%</span></td><td style="font-size:10px;white-space:normal;max-width:180px;">Activities thấp, cần đẩy tốc độ</td></tr>
-                <tr><td><span class="badge badge-purple">Lead</span></td><td><strong>Đại Dương</strong></td><td>— → —</td><td>—</td><td>— → —</td><td>—</td><td>8 → 6</td><td><span class="badge badge-green">75.0%</span></td><td>8 → 3</td><td><span class="badge badge-red">40.0%</span></td><td>1 → 0</td><td><span class="badge badge-red">0.0%</span></td><td></td></tr>
-                <tr style="font-weight:700; border-top:2px solid var(--border);"><td></td><td>TỔNG</td><td>2,475 → 1,236</td><td>49.9%</td><td>990 → 777</td><td>78.5%</td><td>66 → 51</td><td>77.3%</td><td>60 → 40</td><td>66.7%</td><td>11 → 5</td><td><span class="badge badge-red">44.4%</span></td><td></td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 
 <!-- ===== SECTION 4: QUẢN LÝ ACCOUNT ===== -->
 <div id="account" class="sec">
@@ -662,11 +606,11 @@ Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Rob
 new Chart(document.getElementById('chartGP2Monthly'), {
     type: 'bar',
     data: {
-        labels: ['T1','T2','T3','T4','T5','T6'],
+        labels: ['T1','T2','T3','T4','T5','T6','T7'],
         datasets: [
-            { label: 'Budget', data: [1988, 1097, 2031, 2295, 2295, 2295], backgroundColor: 'rgba(59,130,246,0.2)', borderColor: '#3b82f6', borderWidth: 1, borderRadius: 4 },
-            { label: 'Forecast', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1499.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
-            { label: 'Actual', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1606.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
+            { label: 'Budget', data: [1988, 1097, 2031, 2295, 2295, 2295, 2962], backgroundColor: 'rgba(59,130,246,0.2)', borderColor: '#3b82f6', borderWidth: 1, borderRadius: 4 },
+            { label: 'Forecast', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1499.0, 1438.0], backgroundColor: 'rgba(234,179,8,0.3)', borderColor: '#eab308', borderWidth: 1, borderRadius: 4 },
+            { label: 'Actual', data: [1122.0, 880.0, 1275.0, 1460.0, 1180.0, 1606.0, 584.0], backgroundColor: 'rgba(34,197,94,0.4)', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 }
         ]
     },
     options: {
@@ -680,11 +624,11 @@ new Chart(document.getElementById('chartGP2Monthly'), {
 new Chart(document.getElementById('chartEfficiency'), {
     type: 'line',
     data: {
-        labels: ['T1','T2','T3','T4','T5','T6'],
+        labels: ['T1','T2','T3','T4','T5','T6','T7'],
         datasets: [
-            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 100.0, 100.0, 107.1], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 100.0, 100.0, 107.1], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-            { label: 'Target 100%', data: [100,100,100,100,100,100], borderColor: '#ef4444', borderDash: [5,5], fill: false, tension: 0, pointRadius: 0 }
+            { label: '% Act/Forecast', data: [100.0, 100.0, 100.0, 100.0, 100.0, 107.1, 40.6], borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: '% Actual/Runrate', data: [100.0, 100.0, 100.0, 100.0, 100.0, 107.1, 71.7], borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+            { label: 'Target 100%', data: [100,100,100,100,100,100,100], borderColor: '#ef4444', borderDash: [5,5], fill: false, tension: 0, pointRadius: 0 }
         ]
     },
     options: {
@@ -732,8 +676,9 @@ new Chart(document.getElementById('chartFuncPerf'), {
 
 // ============ CHART 5: Weekly Growth ============
 const weeklyData = [
-    { w: '30/6', lead: 124, ql: 64, brief: 46, qb: 26, qs: 14, vc: 5, contract: 1 },
+    { w: '30/6', lead: 83, ql: 43, brief: 24, qb: 15, qs: 7, vc: 1, contract: 1 },
     { w: '7/7', lead: 301, ql: 152, brief: 61, qb: 40, qs: 22, vc: 7, contract: 2 },
+    { w: '14/7', lead: 330, ql: 154, brief: 64, qb: 47, qs: 35, vc: 1, contract: 4 },
 ];
 
 new Chart(document.getElementById('chartWeekly'), {
@@ -758,50 +703,6 @@ new Chart(document.getElementById('chartWeekly'), {
 const tbody = document.getElementById('weeklyTableBody');
 weeklyData.forEach(d => {
     tbody.innerHTML += `<tr><td><strong>${d.w}</strong></td><td>${d.lead}</td><td>${d.ql}</td><td>${d.brief}</td><td>${d.qb}</td><td>${d.qs}</td><td>${d.vc}</td><td>${d.contract}</td></tr>`;
-});
-
-// ============ SALES PIC CHARTS ============
-const salesPICs = ['Nguyệt','Tài Hoa','Mai Thư','Trang','Đại Dương'];
-const salesMeetAch = [100.0, 55.6, 100.0, 70.6, 75.0];
-const salesBriefAch = [66.7, 33.3, 126.7, 53.3, 40.0];
-const salesContractAch = [66.7, 0, 133.3, 0, 0];
-
-new Chart(document.getElementById('chartSalesPIC'), {
-    type: 'bar',
-    data: {
-        labels: salesPICs,
-        datasets: [
-            { label: 'Meeting %', data: salesMeetAch, backgroundColor: '#3b82f6', borderRadius: 3 },
-            { label: 'Brief %', data: salesBriefAch, backgroundColor: '#a855f7', borderRadius: 3 },
-            { label: 'Contract %', data: salesContractAch, backgroundColor: '#22c55e', borderRadius: 3 }
-        ]
-    },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
-        scales: { y: { beginAtZero: true, max: 200, ticks: { callback: v => v+'%' } } }
-    }
-});
-
-const bdMetrics = ['Activities','Q.Activities','Meeting','Brief','Contract'];
-const bdAch = [49.9, 78.5, 77.3, 66.7, 44.4];
-const bdColors = bdAch.map(v => v >= 75 ? 'rgba(34,197,94,0.7)' : v >= 50 ? 'rgba(234,179,8,0.7)' : 'rgba(239,68,68,0.7)');
-new Chart(document.getElementById('chartSalesMetrics'), {
-    type: 'bar',
-    data: {
-        labels: bdMetrics,
-        datasets: [{
-            label: 'Achievement %',
-            data: bdAch,
-            backgroundColor: bdColors,
-            borderRadius: 4
-        }]
-    },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true, ticks: { callback: v => v+'%' } } }
-    }
 });
 
 // ============ CHART 6: Account Funnel ============
@@ -960,182 +861,6 @@ const today = new Date();
 const todayStr = today.toLocaleDateString('vi-VN');
 const ganttLabel = document.getElementById('ganttTodayLabel');
 if (ganttLabel) ganttLabel.innerHTML = '📍 Hôm nay: <strong>' + todayStr + '</strong> — đang ở Sprint 5';
-
-// ============ VERTICAL DATA ============
-const verticalData = [
-    { v: 'Auto', lead: 7, ql: 6, brief: 6, qb: 7, qs: 3, vc: 1, nvc: 3, contract: 2, exec: 0 },
-    { v: 'Beauty', lead: 30, ql: 17, brief: 11, qb: 9, qs: 7, vc: 3, nvc: 21, contract: 1, exec: 0 },
-    { v: 'Digital Product', lead: 9, ql: 2, brief: 1, qb: 1, qs: 1, vc: 2, nvc: 0, contract: 0, exec: 0 },
-    { v: 'Education', lead: 31, ql: 20, brief: 14, qb: 14, qs: 8, vc: 3, nvc: 7, contract: 2, exec: 0 },
-    { v: 'FMCG', lead: 35, ql: 20, brief: 10, qb: 12, qs: 9, vc: 1, nvc: 8, contract: 0, exec: 0 },
-    { v: 'Fashion', lead: 36, ql: 24, brief: 14, qb: 15, qs: 10, vc: 7, nvc: 12, contract: 5, exec: 0 },
-    { v: 'Finance', lead: 10, ql: 8, brief: 7, qb: 6, qs: 7, vc: 2, nvc: 5, contract: 3, exec: 0 },
-    { v: 'Health Care', lead: 23, ql: 15, brief: 12, qb: 12, qs: 9, vc: 6, nvc: 6, contract: 4, exec: 0 },
-    { v: 'Home & Electronics', lead: 27, ql: 10, brief: 7, qb: 6, qs: 7, vc: 4, nvc: 11, contract: 4, exec: 0 },
-    { v: 'Others', lead: 74, ql: 38, brief: 24, qb: 23, qs: 22, vc: 4, nvc: 28, contract: 2, exec: 0 },
-    { v: 'Real estate', lead: 10, ql: 7, brief: 6, qb: 3, qs: 1, vc: 0, nvc: 4, contract: 1, exec: 0 },
-    { v: 'Retail', lead: 4, ql: 3, brief: 3, qb: 2, qs: 1, vc: 1, nvc: 3, contract: 0, exec: 0 },
-    { v: 'Travel', lead: 10, ql: 5, brief: 3, qb: 3, qs: 3, vc: 2, nvc: 2, contract: 0, exec: 0 },
-];
-
-// Populate vertical table
-const vBody = document.getElementById('verticalTableBody');
-let vTotalLead=0,vTotalQL=0,vTotalBrief=0,vTotalQB=0,vTotalQS=0,vTotalVC=0,vTotalNVC=0,vTotalC=0,vTotalE=0;
-verticalData.forEach(d => {
-    vTotalLead+=d.lead; vTotalQL+=d.ql; vTotalBrief+=d.brief; vTotalQB+=d.qb; vTotalQS+=d.qs; vTotalVC+=d.vc; vTotalNVC+=d.nvc; vTotalC+=d.contract; vTotalE+=d.exec;
-    const crLQ = d.lead>0 ? ((d.ql/d.lead)*100).toFixed(1)+'%' : '—';
-    const crQB = d.ql>0 ? ((d.brief/d.ql)*100).toFixed(1)+'%' : '—';
-    const crBC = d.brief>0 ? ((d.contract/d.brief)*100).toFixed(1)+'%' : '—';
-    const crBCpct = d.brief>0 ? (d.contract/d.brief)*100 : 0;
-    const crBCclass = crBCpct >= 30 ? 'badge-green' : crBCpct >= 15 ? 'badge-yellow' : 'badge-red';
-    vBody.innerHTML += `<tr>
-        <td><strong>${d.v}</strong></td><td>${d.lead}</td><td>${d.ql}</td><td>${d.brief}</td><td>${d.qb}</td><td>${d.qs}</td><td>${d.vc}</td><td>${d.nvc}</td>
-        <td><strong>${d.contract}</strong></td><td>${d.exec}</td>
-        <td>${crLQ}</td><td>${crQB}</td><td><span class="badge ${crBCclass}">${crBC}</span></td>
-    </tr>`;
-});
-vBody.innerHTML += `<tr style="font-weight:700;border-top:2px solid var(--border);">
-    <td>TOTAL</td><td>${vTotalLead}</td><td>${vTotalQL}</td><td>${vTotalBrief}</td><td>${vTotalQB}</td><td>${vTotalQS}</td><td>${vTotalVC}</td><td>${vTotalNVC}</td><td>${vTotalC}</td><td>${vTotalE}</td>
-    <td>${(vTotalQL/vTotalLead*100).toFixed(1)}%</td><td>${(vTotalBrief/vTotalQL*100).toFixed(1)}%</td><td><span class="badge badge-yellow">${(vTotalC/vTotalBrief*100).toFixed(1)}%</span></td>
-</tr>`;
-
-// Vertical funnel chart (horizontal stacked)
-new Chart(document.getElementById('chartVerticalFunnel'), {
-    type: 'bar',
-    data: {
-        labels: verticalData.map(d => d.v),
-        datasets: [
-            { label: 'Lead', data: verticalData.map(d => d.lead), backgroundColor: '#3b82f6', borderRadius: 2 },
-            { label: 'QL', data: verticalData.map(d => d.ql), backgroundColor: '#06b6d4', borderRadius: 2 },
-            { label: 'Brief', data: verticalData.map(d => d.brief), backgroundColor: '#a855f7', borderRadius: 2 },
-            { label: 'Contract', data: verticalData.map(d => d.contract), backgroundColor: '#22c55e', borderRadius: 2 }
-        ]
-    },
-    options: {
-        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: { position: 'top', labels: { usePointStyle: true, padding: 10 } } },
-        scales: { x: { stacked: false, beginAtZero: true }, y: {} }
-    }
-});
-
-// Vertical CR chart
-const vCR = verticalData.map(d => d.brief > 0 ? ((d.contract/d.brief)*100) : 0).map(v => +v.toFixed(1));
-new Chart(document.getElementById('chartVerticalCR'), {
-    type: 'bar',
-    data: {
-        labels: verticalData.map(d => d.v),
-        datasets: [{
-            label: 'CR Brief → Contract',
-            data: vCR,
-            backgroundColor: vCR.map(v => v >= 30 ? '#22c55e' : v >= 15 ? '#eab308' : '#ef4444'),
-            borderRadius: 4
-        }]
-    },
-    options: {
-        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        scales: { x: { beginAtZero: true, max: Math.max(...vCR)+10, ticks: { callback: v => v+'%' } } }
-    }
-});
-
-// ============ SOURCE DATA ============
-const sourceData = [
-    { s: 'Direct_Hotline_Email', lead: 4, ql: 4, brief: 2, qb: 1, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Live chat', lead: 16, ql: 13, brief: 12, qb: 10, qs: 8, vc: 3, nvc: 11, contract: 1, exec: 0 },
-    { s: 'Direct_Hotline_Phone', lead: 25, ql: 25, brief: 12, qb: 10, qs: 9, vc: 2, nvc: 5, contract: 0, exec: 0 },
-    { s: 'Direct_Hotline_Social inbox', lead: 10, ql: 10, brief: 9, qb: 6, qs: 5, vc: 3, nvc: 1, contract: 2, exec: 0 },
-    { s: 'Direct_Website_Main contact form', lead: 2, ql: 2, brief: 1, qb: 1, qs: 1, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { s: 'Marketing_Ad_Facebook', lead: 5, ql: 5, brief: 3, qb: 4, qs: 1, vc: 0, nvc: 5, contract: 0, exec: 0 },
-    { s: 'Marketing_BD Inbound_ReApproach', lead: 18, ql: 4, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 5, contract: 0, exec: 0 },
-    { s: 'Marketing_Event_Guest speak', lead: 27, ql: 7, brief: 3, qb: 3, qs: 2, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Marketing_Event_Hosted event', lead: 37, ql: 8, brief: 3, qb: 2, qs: 2, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Referral_Active', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Referral_Client_Current PIC existing', lead: 0, ql: 0, brief: 0, qb: 1, qs: 0, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Referral_Client_Current PIC old', lead: 1, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Referral_Employee_Existing', lead: 3, ql: 3, brief: 4, qb: 5, qs: 3, vc: 2, nvc: 5, contract: 2, exec: 0 },
-    { s: 'Referral_PMAX_Active', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 7, contract: 0, exec: 0 },
-    { s: 'Referral_PMAX_Passive', lead: 1, ql: 1, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 2, contract: 0, exec: 0 },
-    { s: 'Referral_PMAX_Passive_MKTLead', lead: 0, ql: 1, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Referral_PMAX_Referral', lead: 0, ql: 0, brief: 0, qb: 1, qs: 0, vc: 0, nvc: 1, contract: 1, exec: 0 },
-    { s: 'Referral_Partner_Non-Strategic', lead: 2, ql: 2, brief: 1, qb: 1, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Referral_Partner_Strategic', lead: 6, ql: 3, brief: 2, qb: 2, qs: 2, vc: 1, nvc: 2, contract: 1, exec: 0 },
-    { s: 'Scrapping_BOD', lead: 0, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Scrapping_Community_Group', lead: 2, ql: 2, brief: 1, qb: 1, qs: 0, vc: 0, nvc: 0, contract: 0, exec: 0 },
-    { s: 'Scrapping_Contact list_Non-Paid', lead: 2, ql: 4, brief: 3, qb: 2, qs: 1, vc: 0, nvc: 1, contract: 0, exec: 0 },
-    { s: 'Scrapping_Contact list_Paid', lead: 2, ql: 1, brief: 1, qb: 2, qs: 1, vc: 1, nvc: 1, contract: 1, exec: 0 },
-    { s: 'Scrapping_Event_Joined event', lead: 13, ql: 5, brief: 2, qb: 2, qs: 2, vc: 1, nvc: 0, contract: 1, exec: 0 },
-    { s: 'Scrapping_Relationship_Direct', lead: 55, ql: 47, brief: 37, qb: 36, qs: 30, vc: 13, nvc: 16, contract: 5, exec: 0 },
-    { s: 'Scrapping_Relationship_Referral', lead: 1, ql: 0, brief: 0, qb: 0, qs: 0, vc: 0, nvc: 2, contract: 0, exec: 0 },
-    { s: 'Scrapping_Research_Google', lead: 16, ql: 1, brief: 1, qb: 3, qs: 3, vc: 3, nvc: 9, contract: 3, exec: 0 },
-    { s: 'Scrapping_Research_Social', lead: 60, ql: 26, brief: 17, qb: 16, qs: 14, vc: 6, nvc: 29, contract: 6, exec: 0 },
-];
-
-// Populate source table
-const sBody = document.getElementById('sourceTableBody');
-let sTL=0,sTQL=0,sTB=0,sTQB=0,sTQS=0,sTVC=0,sTNVC=0,sTC=0,sTE=0;
-sourceData.forEach(d => {
-    sTL+=d.lead; sTQL+=d.ql; sTB+=d.brief; sTQB+=d.qb; sTQS+=d.qs; sTVC+=d.vc; sTNVC+=d.nvc; sTC+=d.contract; sTE+=d.exec;
-    const crLQ = d.lead>0 ? ((d.ql/d.lead)*100).toFixed(1)+'%' : '—';
-    const crLC = d.lead>0 ? ((d.contract/d.lead)*100).toFixed(1)+'%' : (d.contract>0?'∞':'—');
-    const crLCpct = d.lead>0 ? (d.contract/d.lead)*100 : 0;
-    const cls = crLCpct >= 10 ? 'badge-green' : crLCpct > 0 ? 'badge-yellow' : 'badge-red';
-    sBody.innerHTML += `<tr>
-        <td><strong style="font-size:11px">${d.s}</strong></td><td>${d.lead}</td><td>${d.ql}</td><td>${d.brief}</td><td>${d.qb}</td><td>${d.qs}</td><td>${d.vc}</td><td>${d.nvc}</td>
-        <td><strong>${d.contract}</strong></td><td>${d.exec}</td>
-        <td>${crLQ}</td><td><span class="badge ${cls}">${crLC}</span></td>
-    </tr>`;
-});
-sBody.innerHTML += `<tr style="font-weight:700;border-top:2px solid var(--border);">
-    <td>TOTAL</td><td>${sTL}</td><td>${sTQL}</td><td>${sTB}</td><td>${sTQB}</td><td>${sTQS}</td><td>${sTVC}</td><td>${sTNVC}</td><td>${sTC}</td><td>${sTE}</td>
-    <td>${(sTQL/sTL*100).toFixed(1)}%</td><td><span class="badge badge-yellow">${(sTC/sTL*100).toFixed(1)}%</span></td>
-</tr>`;
-
-const sourceGrouped = [
-    { g: 'Scrapping', lead: 151, ql: 86, brief: 62, contract: 16, color: '#3b82f6' },
-    { g: 'Marketing', lead: 87, ql: 24, brief: 10, contract: 0, color: '#eab308' },
-    { g: 'Direct', lead: 57, ql: 54, brief: 36, contract: 4, color: '#22c55e' },
-    { g: 'Referral', lead: 13, ql: 11, brief: 10, contract: 4, color: '#a855f7' },
-];
-
-// Source Lead chart (grouped)
-new Chart(document.getElementById('chartSourceLead'), {
-    type: 'bar',
-    data: {
-        labels: sourceGrouped.map(d => d.g),
-        datasets: [{
-            label: 'Lead',
-            data: sourceGrouped.map(d => d.lead),
-            backgroundColor: sourceGrouped.map(d => d.color),
-            borderRadius: 4
-        }]
-    },
-    options: {
-        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        scales: { x: { beginAtZero: true } }
-    }
-});
-
-// Source Contract conversion chart
-const srcCR = sourceGrouped.map(d => d.lead > 0 ? +((d.contract/d.lead)*100).toFixed(1) : (d.contract > 0 ? 100 : 0));
-new Chart(document.getElementById('chartSourceContract'), {
-    type: 'bar',
-    data: {
-        labels: sourceGrouped.map(d => d.g),
-        datasets: [
-            { label: 'Contract', data: sourceGrouped.map(d => d.contract), backgroundColor: sourceGrouped.map(d => d.color), borderRadius: 4, yAxisID: 'y' },
-            { label: 'CR Lead→Contract', data: srcCR, type: 'line', borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)', pointRadius: 5, yAxisID: 'y1', tension: 0.3 }
-        ]
-    },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
-        scales: {
-            y: { beginAtZero: true, position: 'left', title: { display: true, text: 'Contracts' } },
-            y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { callback: v => v+'%' }, title: { display: true, text: 'CR %' } }
-        }
-    }
-});
 
 // ============ PROJECT DETAIL DATA ============
 const projectData = [
